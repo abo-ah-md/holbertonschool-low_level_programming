@@ -16,15 +16,15 @@ n = rand() - RAND_MAX / 2;
 	/* your code goes there */
 if (n > 0)
 {
-printf ("is positive");
+printf ("%zu is positive",n);
 }
  else if (n == 0)
 {
-printf("is zero");
+  printf("%zu is zero",n);
 }
 else
 {
-printf("is negative");
+  printf("%zu is negative",n);
 }
 return (0);
 }
