@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
-*main:function prints a string to standerd output
-*return:0
+* main - prints a string to standerd output
+* Return: 0
 */
 int main(void)
 {
