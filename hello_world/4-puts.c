@@ -1,6 +1,5 @@
 #include <stdio.h>
 /**
-*
 *main:function prints a string to standerd output
 *return:0
 */
