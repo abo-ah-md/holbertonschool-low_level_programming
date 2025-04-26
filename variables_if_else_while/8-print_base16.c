@@ -17,7 +17,7 @@ putchar(n);
 }
 for (alpha = 97; alpha <= 102; alpha++)
 {
-putchar(alpha)
+putchar(alpha);
 }
 putchar('\n');
 
