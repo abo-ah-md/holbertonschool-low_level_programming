@@ -1,16 +1,26 @@
-#include <stdio.h>
+#include <unistd.h>
 /* more headers goes there */
 
 /**
-* main - generate random number and
-* prints the numbers from 0 to 10
-* in lowercase and form a to f, followed by a new line
+* main - print string using only _putchat
 * Return: 0
 */
+
+char _putchar(char c)
+{
+return (write(1,&c, 1));
+}
 int main(void)
 {
-printf("_putchar\n");
-
+_putchar('_');
+_putchar('p');
+_putchar('u');
+_putchar('t');
+_putchar('c');
+_putchar('h');
+_putchar('a');
+_putchar('r');
+_putchar('\n');
 return (0);
 
 }
