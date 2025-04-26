@@ -6,8 +6,8 @@
 void print_alphabet(void)
 {
 char alphabet[] = "abcdefghijclmnopqrstuvwxyz"
-int i;
-while(alphabet[i] !="0/" )
+int i=0;
+while(alphabet[i] !="0/")
 {
 Putchar(alphabet[i]);
 i++
