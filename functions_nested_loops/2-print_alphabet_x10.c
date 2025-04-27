@@ -13,7 +13,8 @@ int ten;
 
 for (ten = 0; ten <= 10; ten++)
 {
-while (alphabet[i] != '\0')
+i= 0;
+while(alphabet[i] != '\0')
 {
 _putchar(alphabet[i]);
 i++;
