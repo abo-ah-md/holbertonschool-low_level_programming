@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
- * print_alphabet - prints the alphabet in lowercase
- */
+*print_alphabet - prints the alphabet in lowercase
+*/
 void print_alphabet(void)
 {
-char alphabet[] = "abcdefghijclmnopqrstuvwxyz"
-char i =;
-while(alphabet[i] !="0/")
+char alphabet[] = "abcdefghijklmnopqrstuvwxyz";
+int i= 0;
+while(alphabet[i] != '\0')
 {
-Putchar(alphabet[i]);
-i++
+_putchar(alphabet[i]);
+i++;
 }
 }
