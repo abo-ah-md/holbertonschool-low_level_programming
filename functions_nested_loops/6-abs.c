@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
-*print_sign- prints the abdulute value of anumber number
+*_abs- prints the abdulute value of anumber number
 *@n:the number to check
 *Return: abs
 */
-int print_sign(int n)
+int _abs(int n)
 {
 
 if (n < 0)
