@@ -4,7 +4,7 @@
 *_isLower - check and prints if the alphabet in lowercase
 *Return: 0
 */
-int _slower(int c)
+int _islower(int c)
 {
 
 char alphabet[] = "abcdefghijklmnopqrstuvwxyz\n";
