@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-*_isalpha - check and prints if the alphabet in lowercase
+*print_sign - check and prints if the alphabet in lowercase
 *@n:the number to check
 *Return: 0 or 1 or -1
 */
