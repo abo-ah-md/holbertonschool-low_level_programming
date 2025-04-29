@@ -54,7 +54,7 @@ number1++;
 check = '0';
 }
 
-if(check == '0' && t_24 == '0' )
+if(check == '0')
 {
 
 if(number3 <= '6' && number4 <= '9')
