@@ -11,14 +11,11 @@ int hr10 = 0;
 int hr0 = 0;
 int min10 = 0;
 int min0 = 0;
-int i = 0;
-int j = 0;
-for (i ; i < 24 ; i++)
+int j, i;
+for (i = 0 ; i < 24 ; i++)
 {
-for (j ; j < 60; j++)
+for (j = 0 ; j < 60; j++)
 {
-
-
 _putchar((hr10 + i) / 10 + '0');
 _putchar((hr0 + i) % 10 + '0');
 _putchar(':');
