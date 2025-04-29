@@ -11,9 +11,11 @@ int hr10 = 0;
 int hr0 = 0;
 int min10 = 0;
 int min0 = 0;
-for (int i = 0; i < 24 ; i++)
+int i = 0;
+int j = 0;
+for (i ; i < 24 ; i++)
 {
-for (int j = 0; j < 60; j++)
+for (j ; j < 60; j++)
 {
 
 
