@@ -26,7 +26,7 @@ _putchar(' ');
 else
 {
 _putchar(result + '0');
-if (j != 9 )
+if (j != 9)
 {
 _putchar(',');
 _putchar(' ');
