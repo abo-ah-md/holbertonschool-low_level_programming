@@ -30,7 +30,7 @@ if (j != 9 )
 {
 _putchar(',');
 _putchar(' ');
-if (result <10)
+if ((j + 1) * i <= 9 && j != 0)
 {
 _putchar(' ');
 }
