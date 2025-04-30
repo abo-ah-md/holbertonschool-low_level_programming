@@ -1,4 +1,4 @@
-#include "main.h"
+ #include "main.h"
 /**
 *times_table - PRINTS 24h clock
 *48 - 57
@@ -30,7 +30,8 @@ if (j != 9)
 {
 _putchar(',');
 _putchar(' ');
-if ((j + 1) * i <= 9 && j != 0)
+
+if ((j + 1) * i <= 9 || j != 0)
 {
 _putchar(' ');
 }
