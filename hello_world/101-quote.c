@@ -1,9 +1,9 @@
-#include <stdio.h>
-#include <string.h>
-#include <errno.h>
+#include <unistd.h>
 int main() {
 
-fprintf(stderr,"and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
+const char *msg ="and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+
+write(2,msg,59);
 
 return (1);
 }
