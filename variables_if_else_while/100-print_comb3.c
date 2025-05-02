@@ -10,17 +10,16 @@
 int main(void)
 {
 int i = 0;
-for (i; i <= 81; i++)
+for (i; i <= 9; i++)
+{
+int j = i + 1;
+for (j; j <= 9; j++)
 {
 putchar(i + '0');
-if(i + 1 == 10)
-{
-putchar(i + '0');
-}
-else
-putchar((i + 1) + '0');
+putchar(j + '0');
 putchar(',');
 putchar(' ');
+}
 }
 return (0);
 }
