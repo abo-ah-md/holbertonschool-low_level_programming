@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * reset_to_98 - change the adress a pointer's value
- *
+ *@n: a pointer
  *
  */
 
