@@ -15,14 +15,14 @@ for (j = 0; j <= 9; j++)
 check = 0;
 for (i = 48; i < 59 ; i++)
 {
-if(i == 58)
+if (i == 58)
 {
 check = 1;
 i = 48;
 }
-if(check == 1)
+if (check == 1)
 {
-if(i == 53)
+if (i == 53)
 {
 break;
 }
