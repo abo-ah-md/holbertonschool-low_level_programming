@@ -7,6 +7,13 @@
  */
 int main(void)
 {
-    more_numbers();
+    print_line(0);
+_putchar('0');
+    print_line(2);
+_putchar('2');
+    print_line(10);
+_putchar('t');
+    print_line(-4);
+_putchar('-');
     return (0);
 }
