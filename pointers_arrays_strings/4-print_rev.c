@@ -2,20 +2,15 @@
 #include <stdio.h>
 /**
  *print_rev-prints  a string
- *@s: astring
+ *@s: string
  *
  */
 void print_rev(char *s)
 {
-int i = 0;
-int j;
-while (s[i] != '\0')
+int i;
+for (i = 10 ; i  != 0 ; i--)
 {
-i++;
-}
-for (j = i+1; j != -1  ; j--)
-{
-_putchar(s[j]);
+_putchar(s[-1 -i]);
 }
 _putchar('\n');
 }
