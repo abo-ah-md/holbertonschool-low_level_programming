@@ -1,7 +1,7 @@
 #include "main.h"
 /**
 *more_numbers - print from 0 to 14 |10 times| with new line
-*01234567891090
+*
 *Return: void
 *
 *
@@ -13,26 +13,22 @@ int check = 0;
 for (j = 0; j <= 9; j++)
 {
 check = 0;
-for (i = 48; i < 58 ; i++)
+for (i = 48; i < 59 ; i++)
 {
-if (check == 0)
+if(i == 58)
 {
-_putchar(i);
-}
-if (i == 57 || check == 1)
-{
-if (check == 0)
-{
-i = 48;
 check = 1;
+i = 48;
 }
-_putchar(49);
-_putchar(i);
-if (i == 52)
+if(check == 1)
+{
+if(i == 53)
 {
 break;
 }
+_putchar(49);
 }
+_putchar(i);
 }
 _putchar('\n');
 }
