@@ -12,7 +12,7 @@ int j;
 for (i = 0 ; str[i] != '\0'; i++)
 {}
 
-for (j = i / 2 ; j <=  i ; j++)
+for (j = i / 2 ; j !=  i ; j++)
 {
 if (i % 2 != 0)
 {
