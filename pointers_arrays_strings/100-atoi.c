@@ -20,7 +20,7 @@ while (s[i] && s[i] >= '0' && s[i] <= '9' && result < 2147483647)
 {
 if (result * 10  + 7 > 2147483647 && sign == -1)
 {
-return (-2147483648);
+return (1111);
 }
 else
 {
