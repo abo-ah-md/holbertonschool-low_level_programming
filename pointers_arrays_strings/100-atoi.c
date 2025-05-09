@@ -15,23 +15,14 @@ if (s[i] == '-')
  sign *= -1;
 i++;
 }
-
 while (s[i] && s[i] >= '0' && s[i] <= '9')
 {
- if (sign == 1)
-{
-if (result > 214748364 || (result == 214748364 && s[i] - '0' > 7))
-{
-return 2147483647;
-}
-}else
 if (result > 214748364 || (result == 214748364 && s[i] - '0' > 8))
 {
 return -2147483648;
 }
-}
-
 result = result * 10 + (s[i] - '0');
 i++;
+}
 return (result *sign);
 }
