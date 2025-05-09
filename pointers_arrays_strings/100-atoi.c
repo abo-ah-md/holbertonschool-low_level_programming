@@ -1,28 +1,46 @@
 #include "main.h"
 #include <stdio.h>
+#include <limits.h>
 /**
 *_atoi - copies n elements of an arr to another
 *@s: pointer to string
 *
 *Return:copies of the str
 */
+
+
 int _atoi(char *s)
 {
-int i = 0, result = 0, sign = 1 ;
-while (s[i] && (s[i] < '0' || s[i] > '9'))
-{
-if (s[i] == '-')
- sign *= -1;
-i++;
-}
-while (s[i] && s[i] >= '0' && s[i] <= '9')
-{
-if (result > 214748364 || (result == 214748364 && s[i] - '0' > 8))
-{
-return -2147483648;
-}
-result = result * 10 + (s[i] - '0');
-i++;
-}
-return (result *sign);
+    int sign = 1;
+    int result = 0;
+    int started = 0;
+
+    while (*s)
+    {
+        if (*s == '-' || *s == '+')
+        {
+            if (started)
+                break;
+            if (*s == '-')
+                sign *= -1;
+        }
+        else if (*s >= '0' && *s <= '9')
+        {
+            int digit = *s - '0';
+
+            // Check for overflow BEFORE it happens
+            if (result > (INT_MAX - digit) / 10)
+                return (sign == 1 ? INT_MAX : INT_MIN);
+
+            result = result * 10 + digit;
+            started = 1;
+        }
+        else if (started)
+        {
+            break;
+        }
+        s++;
+    }
+
+    return result * sign;
 }
