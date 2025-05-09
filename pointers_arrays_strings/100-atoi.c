@@ -18,7 +18,7 @@ i++;
 
 while (s[i] && s[i] >= '0' && s[i] <= '9')
 {
-if (result == 2147483648 && sign == -1)
+if (result == -2147483648 && sign == -1)
 {
 return (result);
 }
