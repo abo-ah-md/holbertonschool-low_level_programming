@@ -25,5 +25,7 @@ if (result == -2147483648 && sign == -1)
 {
 return (result);
 }
+else{
 return (result *sign);
+}
 }
