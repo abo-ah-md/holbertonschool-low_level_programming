@@ -26,14 +26,18 @@ if (s[i] == '-')
 {
 if (s[i + 1] <= '9' && s[i + 1] >= '0')
 {
-neg = -1;
+neg--;
 }
 else
 if (s[i + 1] == '+')
 {
-neg = -1;
+neg--;
 }
 }
+}
+if (neg < -1)
+{
+neg =1;
 }
 return (result *neg);
 }
