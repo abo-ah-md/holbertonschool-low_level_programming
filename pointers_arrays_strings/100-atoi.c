@@ -22,7 +22,7 @@ result = result * 10 + (s[i] - '0');
 i++;
 if (result == -2147483648 && sign == -1)
 {
-return (result)
+return (result);
 }
 }
 return (result *sign);
