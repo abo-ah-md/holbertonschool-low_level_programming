@@ -18,9 +18,9 @@ i++;
 
 while (s[i] && s[i] >= '0' && s[i] <= '9')
 {
-if (result * 10 + (s[i] - '0') >= 2147483647 && sign == -1)
+if (result * 10 + (s[i] - '0') >= 2147483640 && sign == -1)
 {
-return (result);
+return (-2147483648);
 }
 result = result * 10 + (s[i] - '0');
 i++;
