@@ -37,7 +37,7 @@ neg--;
 }
 if (neg < -1)
 {
-neg =1;
+neg = 1;
 }
 return (result *neg);
 }
