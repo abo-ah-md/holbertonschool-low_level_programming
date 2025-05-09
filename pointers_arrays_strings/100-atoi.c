@@ -21,5 +21,9 @@ while (s[i] && s[i] >= '0' && s[i] <= '9')
 result = result * 10 + (s[i] - '0');
 i++;
 }
+if (result == -2147483648 && sign == -1)
+{
+return (result);
+}
 return (result *sign);
 }
