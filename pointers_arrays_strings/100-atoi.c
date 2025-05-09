@@ -25,6 +25,11 @@ if (s[i + 1] <= '9' && s[i + 1] >= '0')
 {
 neg = -1;
 }
+else
+if (s[i + 1] <= '+')
+{
+neg = -1;
+}
 }
 }
 return (result *neg);
