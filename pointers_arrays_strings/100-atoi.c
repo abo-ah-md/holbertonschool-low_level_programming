@@ -14,10 +14,13 @@ int i;
 
 for (i = 0; s[i]; i++)
 {
-
 if (s[i] <= '9' && s[i] >= '0')
 {
 result = result * 10 + (s[i] - '0');
+if (s[i + 1] > '9' || s[i + 1] < '0')
+{
+return (result * neg);
+}
 }
 if (s[i] == '-')
 {
