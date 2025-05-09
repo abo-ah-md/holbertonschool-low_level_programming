@@ -12,13 +12,13 @@ int i = 0, result = 0, sign = 1;
 while (s[i] && (s[i] < '0' || s[i] > '9'))
 {
 if (s[i] == '-')
-sign *= -1;
+ sign *= -1;
 i++;
 }
 
 while (s[i] && s[i] >= '0' && s[i] <= '9')
 {
-if (result == -2147483648 && sign == -1)
+if (result * 10 + (s[i] - '0') >= 2147483647 && sign == -1)
 {
 return (result);
 }
