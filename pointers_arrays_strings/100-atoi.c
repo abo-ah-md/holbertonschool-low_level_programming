@@ -18,8 +18,8 @@ i++;
 
 while (s[i] && s[i] >= '0' && s[i] <= '9')
 {
- int digit = s[i] - '0';
-if ((result > 214748364 || (result == 214748364 && digit > 8))  && sign == -1)
+
+if ((result > 214748364 || (result == 214748364 && s[i] - '0' > 8))  && sign == -1)
 {
 return (-2147483648);
 }
