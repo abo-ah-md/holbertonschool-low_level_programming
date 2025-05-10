@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
-*_strcat - concat arr string to another
+*_strncat - concat arr string to another
 *@dest: pointer to string destenation
 *@src: pointer to a string
 *@n: number of bytes
@@ -15,7 +15,7 @@ int j  = 0;
 int k  = 0;
 while (src[i])
 {
-if(i == n)
+if (i == n)
 {
 break;
 }
