@@ -15,6 +15,10 @@ int j  = 0;
 int k  = 0;
 while (src[i])
 {
+if(i == n)
+{
+break;
+}
 i++;
 }
 while (dest[j])
@@ -22,12 +26,11 @@ while (dest[j])
 j++;
 }
 
-while (n > k)
+while (i != k)
 {
 dest[j] = src[k];
 j++;
 k++;
-
 }
 dest[j] = '\0';
 return (dest);
