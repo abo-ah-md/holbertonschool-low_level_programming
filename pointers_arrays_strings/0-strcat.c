@@ -12,22 +12,22 @@ char *_strcat(char *dest, char *src)
 int i  = 0;
 int j  = 0;
 int k  = 0;
-while(src[i])
+while (src[i])
 {
 i++;
 }
-while(dest[j])
+while (dest[j])
 {
 j++;
 }
 
-while(i != k)
+while (i != k)
 {
 dest[j] = src[k];
 j++;
 k++;
-if(i == k)
-dest[j]= '\0';
+if (i == k)
+dest[j] = '\0';
 }
 
 return (dest);
