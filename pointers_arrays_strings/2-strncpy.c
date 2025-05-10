@@ -14,6 +14,10 @@ int k  = 0;
 
 while (src[k])
 {
+if(n == k)
+{
+dest[k] = '\0';
+}
 dest[k] = src[k];
 k++;
 }
