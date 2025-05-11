@@ -24,7 +24,7 @@ if (str[i] == alphabetLower[j])
 int k = 0;
 while (seprators[k])
 {
-if (str[i - 1] == seprators[k])
+if (str[i - 1] == seprators[k] || i  == 0)
 {
 str[i] = alphabetUpper[j];
 }
