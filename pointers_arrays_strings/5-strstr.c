@@ -23,6 +23,7 @@ n++;
 }
 if (*n == '\0')
 return (haystack);
+haystack++;
 }
 return (NULL);
 }
