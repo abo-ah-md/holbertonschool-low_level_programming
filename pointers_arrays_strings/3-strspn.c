@@ -3,7 +3,7 @@
 /**
 **_strspn-  gets the length of a prefix substring.
 *@s: pointer to string
-*@accept: bytes filter
+*@accept:prefix substring.
 *Return:number of bytes in the initial segment of s
 * which consist only of bytes from accept
 */
@@ -11,23 +11,25 @@ unsigned int _strspn(char *s, char *accept)
 {
 unsigned int i = 0;
 char *a;
-int found = 0;
 while (*s)
 {
+int found = 0;
 a = accept;
 while (*a)
 {
 if (*s == *a)
 {
-i++;
 found = 1;
 break;
 }
 a++;
 }
-s++;
 if (!found)
+{
 return (i);
+}
+s++;
+i++;
 }
 return (i);
 }
