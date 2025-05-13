@@ -12,12 +12,13 @@ if (n < 0)
 return (-1);
 if (n == 0)
 return (0);
+if (n == 1)
+return (1);
 root = (_sqrt_recursion(n - 1));
 if (root * root == n)
 return (root);
 if ((root + 1) * (root + 1) > n)
 return (root);
-
 return (root + 1);
 
 }
