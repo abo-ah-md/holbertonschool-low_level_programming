@@ -2,23 +2,25 @@
 #include "main.h"
 /**
 *_sqrt_recursion- returns the length of a string.
-*@n: number
+*
+@n: number
 *Return: sqrt of n
 */
+int _sqrt_recursion(int n);
+int sqrt_helper(int n, int guess);
+
 int _sqrt_recursion(int n)
 {
-int root;
-if (n < 0)
-return (-1);
-if (n == 0)
-return (0);
-if (n == 1)
-return (1);
-root = (_sqrt_recursion(n - 1));
-if (root * root == n)
-return (root);
-if ((root + 1) * (root + 1) > n)
-return (root);
-return (root + 1);
+    if (n < 0)
+        return -1;
+    return sqrt_helper(n, 0);
+}
 
+int sqrt_helper(int n, int guess)
+{
+    if (guess * guess == n)
+        return guess;
+    if (guess * guess > n)
+        return -1;
+    return sqrt_helper(n, guess + 1);
 }
