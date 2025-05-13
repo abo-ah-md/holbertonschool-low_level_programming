@@ -13,7 +13,11 @@ return (-1);
 if (n == 0)
 return (0);
 root = (_sqrt_recursion(n - 1));
-if ((root + 1) * (root + 1) == n)
-return (root + 1);
+if (root * root == n)
 return (root);
+if ((root + 1) * (root + 1) > n)
+return (root);
+
+return (root + 1);
+
 }
