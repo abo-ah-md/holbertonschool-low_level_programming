@@ -8,7 +8,7 @@
 *Return: sqrt of n
 */
 int sqrt_helper(int n, int guess);
-int _sqrt_recursion(int n);
+int _sqrt_recursion(int n)
 {
 if (n < 0)
 return (-1);
