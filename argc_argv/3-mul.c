@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
 int i = 0;
-int result = 0;
+int result = 1;
 
 if (argc < 3)
 {
@@ -18,7 +18,7 @@ return (1);
 }
 while (i != argc)
 {
-result = result + atoi(argv[i]);
+result = result * atoi(argv[i]);
 i++;
 }
 printf("%d\n", result);
