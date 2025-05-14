@@ -18,7 +18,7 @@ return (1);
 }
 while (i != argc)
 {
-result = result * atoi(argv[i]);
+result = result *atoi(argv[i]);
 i++;
 }
 printf("%d\n", result);
