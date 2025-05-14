@@ -8,14 +8,14 @@
 */
 int main(int argc, char *argv[])
 {
+int i = 0;
+int result = 0;
+
 if (argc < 3)
 {
 printf("Error\n");
 return (1);
 }
-int i;
-int result = 0;
-i = 0;
 while (i != argc)
 {
 result = result + atoi(argv[i]);
