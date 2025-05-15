@@ -37,7 +37,7 @@ if (j != n)
 _putchar(',');
 if (result <= 100)
 _putchar(' ');
-if (result <= 9)
+if (result <= 10)
 _putchar(' ');
 _putchar(' ');
 }
