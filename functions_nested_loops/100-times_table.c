@@ -35,10 +35,12 @@ _putchar(result % 10 + '0');
 if (j != n)
 {
 _putchar(',');
-if (result <= 100)
 _putchar(' ');
-if (result <= 10)
+if(result < 10)
 _putchar(' ');
+if(result < 100)
+_putchar(' ');
+
 }
 }
 _putchar('\n');
