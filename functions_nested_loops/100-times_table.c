@@ -39,7 +39,6 @@ if (result <= 100)
 _putchar(' ');
 if (result <= 10)
 _putchar(' ');
-_putchar(' ');
 }
 }
 _putchar('\n');
