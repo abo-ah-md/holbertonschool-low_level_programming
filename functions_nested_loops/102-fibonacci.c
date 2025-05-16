@@ -12,11 +12,12 @@ long fib0 = 1;
 long fib1 = 2;
 long newfib = 0;
 printf("%ld, %ld, ", fib0, fib1);
-while (i < 49)
+while (i <= 48)
 {
 newfib = fib0 + fib1;
 if(i == 48)
 printf("%ld", newfib);
+else
 printf("%ld, ", newfib);
 fib0 = fib1;
 fib1 = newfib;
