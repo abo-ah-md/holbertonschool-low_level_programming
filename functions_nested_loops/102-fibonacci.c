@@ -11,6 +11,7 @@ int i = 1;
 int fib0 = 1;
 int fib1 = 2;
 int newfib = 0;
+printf("%d, %d, ", fib0, fib1);
 while (i < 50)
 {
 newfib = fib0 + fib1;
