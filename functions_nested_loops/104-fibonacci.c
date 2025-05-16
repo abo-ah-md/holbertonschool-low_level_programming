@@ -15,7 +15,7 @@ printf("%ld, %ld, ", fib0, fib1);
 while (i <= 96)
 {
 newfib = fib0 + fib1;
-if (i == 48)
+if (i == 96)
 printf("%ld", newfib);
 else
 printf("%ld, ", newfib);
