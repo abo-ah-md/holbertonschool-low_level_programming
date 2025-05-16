@@ -13,7 +13,6 @@ for (i = 0; i != n + 1; i++)
 for (j = 0; j != n + 1; j++)
 {
 result = i * j;
-dots_result = (1 + i) * (1 + j);
 if (result < 10 && j > 0)
 {
 _putchar(' ');
