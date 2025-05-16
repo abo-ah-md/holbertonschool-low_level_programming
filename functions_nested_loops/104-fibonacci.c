@@ -1,27 +1,38 @@
 #include "main.h"
 #include <stdio.h>
-/**
-*main - main function
-*Return: always return 0
-*/
 
+/**
+ * main - print first 98 Fibonacci numbers
+ * Return: Always 0
+ */
 int main(void)
 {
-int i = 1;
-long fib0 = 1;
-long fib1 = 2;
-long newfib = 0;
-printf("%ld, %ld, ", fib0, fib1);
-while (i <= 96)
+int i;
+unsigned long fib0_low = 1, fib1_low = 2, new_low;
+unsigned long fib0_high = 0, fib1_high = 0, new_high;
+unsigned long base = 1000000000;
+
+printf("%lu, %lu", fib0_low, fib1_low);
+
+for (i = 2; i < 98; i++)
 {
-newfib = fib0 + fib1;
-if (i == 96)
-printf("%ld", newfib);
+new_low = fib0_low + fib1_low;
+new_high = fib0_high + fib1_high;
+
+if (new_low >= base)
+{
+new_low -= base;
+new_high++;
+}
+
+if (new_high > 0)
+printf(", %lu%09lu", new_high, new_low);
 else
-printf("%ld, ", newfib);
-fib0 = fib1;
-fib1 = newfib;
-i++;
+printf(", %lu", new_low);
+fib0_low = fib1_low;
+fib0_high = fib1_high;
+fib1_low = new_low;
+fib1_high = new_high;
 }
 printf("\n");
 return (0);
