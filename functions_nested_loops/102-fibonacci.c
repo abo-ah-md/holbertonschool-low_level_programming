@@ -8,14 +8,14 @@
 int main(void)
 {
 int i = 1;
-int fib0 = 1;
-int fib1 = 2;
-int newfib = 0;
-printf("%d, %d, ", fib0, fib1);
-while (i < 50)
+long fib0 = 1;
+long fib1 = 2;
+long newfib = 0;
+printf("%ld, %ld, ", fib0, fib1);
+while (i < 48)
 {
 newfib = fib0 + fib1;
-printf("%d, ", newfib);
+printf("%ld, ", newfib);
 fib0 = fib1;
 fib1 = newfib;
 i++;
