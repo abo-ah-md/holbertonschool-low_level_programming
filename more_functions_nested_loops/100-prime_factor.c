@@ -20,6 +20,6 @@ else
 i++;
 }
 }
-printf("%lu\n", result);
+printf("%lu\n", number);
 return (0);
 }
