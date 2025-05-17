@@ -8,7 +8,6 @@ int main(void)
 {
 int i = 2;
 long number = 612852475143;
-int pf;
 while (i * i < number)
 {
 if (number % i == 0)
