@@ -41,7 +41,7 @@ while (s1[i] != '\0')
 str[i] = s1[i];
 i++;
 }
-while (j < n)
+while (j < n && s2[j] != '\0')
 {
 str[i] = s2[j];
 i++;
