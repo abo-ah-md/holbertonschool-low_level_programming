@@ -6,7 +6,7 @@
 */
 void print_dog(struct dog *d)
 {
-*char agefail = "(nil)";
+
 if(d == NULL)
 retrun;
 
@@ -15,13 +15,6 @@ d->name = "(nil)";
 
 if(d->owner == NULL)
 d->owner = "(nil)";
-
-
-if(d->age == NULL)
-{
-printf("Name: %s\nAge: %f\nOwner: %s\n", d->name, agefail, d->owner);
-return;
-}
 
 printf("Name: %s\nAge: %f\nOwner: %s\n", d->name, d->age, d->owner);
 }
