@@ -10,13 +10,13 @@
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-dog_t *new_dog = malloc(sizeof(dog_t));
-if (new_dog == NULL)
-return (NULL);
 char *nowner;
 char *nname;
 int i;
 int len;
+dog_t *new_dog = malloc(sizeof(dog_t));
+if (new_dog == NULL)
+return (NULL);
 for (len = 0; owner[len] != '\0'; len++)
 ;
 nowner = malloc(len + 1);
