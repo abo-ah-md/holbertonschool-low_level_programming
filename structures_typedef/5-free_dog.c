@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include "dog.h"
 /**
-*d-   frees dogs struct
 *free_dog - free dogs struct
+*@d:frees dogs struct
 */
 void free_dog(dog_t *d)
 {
