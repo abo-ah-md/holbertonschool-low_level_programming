@@ -3,6 +3,7 @@
 #include "dog.h"
 /**
 *d-   frees dogs struct
+*free_dog
 */
 void free_dog(dog_t *d)
 {
