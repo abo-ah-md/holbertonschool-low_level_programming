@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "dog.h"
 /**
-*free_dog -   frees dogs struct
+*d-   frees dogs struct
 */
 void free_dog(dog_t *d)
 {
