@@ -9,7 +9,7 @@ int num1 = atoi(argv[1]);
 int num2 = atoi(argv[3]);
 int (*op_func)(int,int) = get_op_func(argv[2]);
 
-if (argc != 4)
+if (argc != 4 || argv[1] == NULL || argv[3] == NULL)
 {
 printf("Error\n");
 exit(98);
