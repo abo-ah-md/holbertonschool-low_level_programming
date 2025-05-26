@@ -1,8 +1,13 @@
 #include "3-calc.h"
 #include <string.h>
+/**
+*get_op_func- selects the right operation
+*@s:operand string
+*Return: operation function
+**/
 int (*get_op_func(char *s))(int, int)
 {
- op_t ops[] = {
+op_t ops[] = {
 {"+", op_add},
 {"-", op_sub},
 {"*", op_mul},
@@ -13,7 +18,7 @@ int (*get_op_func(char *s))(int, int)
 int i = 0;
 while (ops[i].op != NULL)
 {
-if(strcmp(ops[i].op,s) == 0)
+if (strcmp(ops[i].op, s) == 0)
 return (ops[i].f);
 i++;
 }
