@@ -13,6 +13,11 @@ unsigned int i;
 if (separator == NULL)
 separator = "";
 va_start(args, n);
+if (n == 0)
+{
+printf(" \n");
+return;
+}
 for (i = 0; i < (n -1); i++)
 printf("%d%s", va_arg(args, int), separator);
 printf("%d\n",va_arg(args, int));
