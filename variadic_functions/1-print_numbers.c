@@ -15,7 +15,7 @@ separator = "";
 va_start(args, n);
 if (n == 0)
 {
-printf("");
+printf(" ");
 return;
 }
 for (i = 0; i < (n -1); i++)
