@@ -18,13 +18,18 @@ if (n == 0)
 printf("\n");
 return;
 }
-for (i = 0; i < (n -1); i++) {
+for (i = 0; i < (n - 1); i++)
+{
 char *str = va_arg(args, char*);
 if(str != NULL)
 printf("%s%s",str, separator);
 if(str == NULL)
 printf("nil%s", separator);
 }
-printf("%s\n",va_arg(args,char*));
+char *last = va_arg(args, char*);
+if(last != NULL)
+printf("%s\n",last);
+if(last == NULL)
+printf("nil/n");
 va_end(args);
 }
