@@ -31,6 +31,6 @@ last = va_arg(args, char*);
 if (last != NULL)
 printf("%s\n", last);
 if (last == NULL)
-printf("(nil)/n");
+printf("(nil)\n");
 va_end(args);
 }
