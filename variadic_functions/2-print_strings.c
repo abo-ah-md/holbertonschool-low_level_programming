@@ -10,6 +10,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 {
 va_list args;
 unsigned int i;
+char *last;
 if (separator == NULL)
 separator = "";
 va_start(args, n);
@@ -26,7 +27,7 @@ printf("%s%s", str, separator);
 if (str == NULL)
 printf("nil%s", separator);
 }
-char *last = va_arg(args, char*);
+last = va_arg(args, char*);
 if (last != NULL)
 printf("%s\n", last);
 if (last == NULL)
