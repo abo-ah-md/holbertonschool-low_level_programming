@@ -9,8 +9,7 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 va_list args;
-unsigned int sum = 0;
-unsigned int i;
+int i;
 if (separator == NULL)
 separator = "";
 va_start(args, n);
