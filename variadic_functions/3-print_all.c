@@ -13,11 +13,10 @@ char *sep = "";
 char *str;
 va_list args;
 va_start(args, format);
-
+if (format == NULL)
+return;
 while (format[i])
 {
-if (format == NULL)
-break;
 switch (format[i]) {
 case 'c':
 printf("%s%c", sep, va_arg(args, int));
