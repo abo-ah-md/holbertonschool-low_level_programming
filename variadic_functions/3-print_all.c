@@ -7,15 +7,18 @@
 */
 void print_all(const char *const format, ...)
 {
+
 int i = 0;
 char *sep = "";
 char *str;
 va_list args;
 va_start(args, format);
+
 while (format[i])
 {
-switch (format[i])
-{
+if (format == NULL)
+break;
+switch (format[i]) {
 case 'c':
 printf("%s%c", sep, va_arg(args, int));
 sep = ", ";
