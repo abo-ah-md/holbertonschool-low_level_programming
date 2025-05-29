@@ -12,7 +12,7 @@ char *sep = "";
 char *str;
 va_list args;
 va_start(args, format);
-while (format[i] && format != NULL)
+while (format && format[i])
 {
 switch (format[i])
 {
