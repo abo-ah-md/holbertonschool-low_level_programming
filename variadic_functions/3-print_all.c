@@ -35,4 +35,5 @@ break;
 sep = ", ";
 i++;
 }
+printf("\n");
 }
