@@ -7,11 +7,11 @@
 */
 void print_all(const char *const format, ...)
 {
-va_list args;
-va_start(args, format);
 int i = 0;
 char *sep = "";
 char *str;
+va_list args;
+va_start(args, format);
 while (format[i])
 {
 switch (format[i])
@@ -26,7 +26,7 @@ case 'f':
 printf("%s%f", sep, va_arg(args, double));
 break;
 case 's':
-str = va_arg(args, char *)
+str = va_arg(args, char *);
 if (str == NULL)
 printf("%s(nil)", sep);
 printf("%s%s", sep, str);
