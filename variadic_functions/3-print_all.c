@@ -36,7 +36,11 @@ break;
 case 's':
 str = va_arg(args, char *);
 if (str == NULL)
+{
 printf("%s(nil)", sep);
+sep = ", ";
+break;
+}
 printf("%s%s", sep, str);
 sep = ", ";
 break;
