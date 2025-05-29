@@ -14,7 +14,10 @@ char *str;
 va_list args;
 va_start(args, format);
 if (format == NULL)
+{
+printf("\n");
 return;
+}
 while (format[i])
 {
 switch (format[i]) {
