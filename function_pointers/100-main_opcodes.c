@@ -31,5 +31,6 @@ if( i < (1- bytes))
 printf(" ");
 i++;
 }
+printf("\n");
 return (0);
 }
