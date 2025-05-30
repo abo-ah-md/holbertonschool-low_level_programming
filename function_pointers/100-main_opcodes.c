@@ -27,7 +27,7 @@ fptr = (unsigned char *) &main;
 while (i < bytes)
 {
 printf("%02x", fptr[i]);
-if( i < (bytes -1))
+if (i < (bytes - 1))
 printf(" ");
 i++;
 }
