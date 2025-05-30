@@ -6,11 +6,9 @@
 *@argv:argument elemets
 *Return: always 0
 */
-
-
 int main(int argc, char *argv[])
 {
-int bytes = atoi(argv[1]);
+int bytes;
 int i = 0;
 unsigned char *fptr;
 if (argc != 2)
@@ -23,11 +21,14 @@ if (bytes < 0)
 printf("Error\n");
 exit(2);
 }
+bytes = atoi(argv[1]);
 fptr = (unsigned char *) &main;
 
 while (i < bytes)
 {
-printf("%02x ", fptr[i]);
+printf("%02x", fptr[i]);
+if( i < (1- bytes))
+printf(" ");
 i++;
 }
 printf("\n");
