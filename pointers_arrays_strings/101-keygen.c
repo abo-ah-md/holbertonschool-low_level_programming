@@ -8,11 +8,11 @@
  */
 int main(void)
 {
-srand(time(NULL));
 int random;
 int sum = 0;
 char ascii[2780];
 int i = 0;
+srand(time(NULL));
 while (sum < 2772 - 126)
 {
 
