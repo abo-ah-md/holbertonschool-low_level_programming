@@ -27,17 +27,23 @@ _putchar((n % 10) + '0');
     _putchar((n % 10) + '0');
   }
 
-  if (n < 0)
-  {
+  if (n < 0) {
+    if (n >= -10)
+{      
+    n = -n;
+     _putchar('-');    
+    _putchar((n % 10) + '0');    
+}
+    
     if (n <= -10 && n > -100)
 {
-n = -n;      
+n = -n;
       _putchar('-');
       _putchar((n / 10) + '0');
       _putchar((n % 10) + '0');
     }
-    if (n <= -100)
-    {
+    if (n <= -100) {
+n = -n;      
       _putchar('-');
       _putchar((n / 100) + '0');
       _putchar((n / 10)  % 10 + '0');
