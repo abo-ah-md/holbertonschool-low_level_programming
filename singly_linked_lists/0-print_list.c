@@ -45,7 +45,7 @@ _putchar(']');
 _putchar(' ');
 if (h->str == NULL)
 {
-print_str("(nill)\n");
+print_str("(nil)\n");
 }
 else
 {
