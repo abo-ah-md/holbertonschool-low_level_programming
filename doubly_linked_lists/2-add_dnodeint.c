@@ -5,19 +5,20 @@
 /**
 *add_dnodeint - prints doubly linked list elements
 *@head:node pointer
-*Return: number of nodes
+*@n: number
+*Return:new node adress
 */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-dlistint_t *new_node;  
+dlistint_t *new_node;
 new_node = malloc(sizeof(dlistint_t));
 if (new_node == NULL)
-return NULL;
+return (NULL);
 new_node->n = n;
 new_node->next = *head;
-new_node->prev = NULL;
 if (*head == NULL)
 {
+new_node->prev = NULL;
 *head = new_node;
 return (new_node);
 }
