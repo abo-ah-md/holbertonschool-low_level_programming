@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
- *dlistint_len - prints doubly linked list elements
+*dlistint_len - prints doubly linked list elements
+*@h:node
 *Return: number of nodes
 */
 size_t dlistint_len(const dlistint_t *h)
