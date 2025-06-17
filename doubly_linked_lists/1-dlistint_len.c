@@ -1,7 +1,7 @@
 #include <stddef.h>
-#include <stdio.h>                                                                                     ### stddef.h  include
-#include <stdlib.h>                                                                                     ### stddef.h  stddef
-#include "lists.h"                                                                                           ### stddef.h  h
+#include <stdio.h>
+#include <stdlib.h>
+#include "lists.h"
 /**
 *print_dlistint - prints doubly linked list elements
 *@h:string
