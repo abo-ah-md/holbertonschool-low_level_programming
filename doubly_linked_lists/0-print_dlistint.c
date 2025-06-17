@@ -11,7 +11,7 @@ size_t print_dlistint(const dlistint_t *h)
 int number_of_nodes;
 number_of_nodes = 0;
 while (h != NULL) {
-printf("%d", h->n);
+printf("%d\n", h->n);
 h = h->next;  
 number_of_nodes++;
 }
