@@ -36,9 +36,10 @@ return (new_node);
 
 while (check->next != NULL && i < idx)
 {
+check = check->next;
 if (check  == NULL)
 {
-check = check->next;
+
 new_node->next = NULL;
 new_node->prev = check;
 check->next = new_node;
