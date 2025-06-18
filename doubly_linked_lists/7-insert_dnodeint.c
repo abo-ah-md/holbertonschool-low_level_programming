@@ -41,12 +41,15 @@ i++;
 }
 if(i == idx && check->next != NULL)
 {
-printf("jsd");
 new_node->next = check;
 new_node->prev = check->prev;
-check->prev->next = new_node;
-check->prev = new_node;
-return new_node;
+ if (check->prev)
+        check->prev->next = new_node;
+    else
+        *h = new_node;
+
+    check->prev = new_node;
+    return (new_node);
 }
 
 if (idx > i)
