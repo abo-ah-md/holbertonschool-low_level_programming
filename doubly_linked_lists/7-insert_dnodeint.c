@@ -13,33 +13,41 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 dlistint_t *new_node, *check;
 unsigned int i;
-if (*h == NULL)
-return (NULL);
-check = *h;
 i = 0;
 new_node = malloc(sizeof(dlistint_t));
-if (new_node == NULL)
-return (NULL);
-new_node->n = n;
-if (idx == 0)
-return (add_dnodeint(h,n));
+if(new_node == NULL)
+return NULL;
+new_node->n= n;
+check = *h;
 
-while (check != NULL && i < idx)
+if(idx == 0)
 {
-check = check->next;
-i++;
-}
-if(idx > i)
-return(NULL);
-if (i == idx && check == NULL)
-return (add_dnodeint_end(h,n));
-if (check->next == NULL)
-{
-return (add_dnodeint_end(h,n));
-}
-new_node->prev = check->prev;
-check->prev->next = new_node;
-check->prev = new_node;
+new_node->prev = NULL;
 new_node->next = check;
-return (new_node);
+*h = new_node;
+}
+
+while(i != idx)
+{
+i++;
+check = check->next;
+printf("still going %d \n", check->n);
+if(check == NULL)
+printf("stopped and check n = %d \n", check->n);
+}
+
+if(check == NULL && idx == i)
+{
+new_node->prev = check;
+new_node->next = NULL;
+check->next = new_node;
+check = *h;
+return new_node;
+}
+
+new_node->prev = check;
+new_node->next = check->next;
+check->next = new_node;
+check = *h;
+return new_node;
 }
