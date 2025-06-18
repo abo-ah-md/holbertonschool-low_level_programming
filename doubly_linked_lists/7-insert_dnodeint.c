@@ -13,48 +13,68 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 dlistint_t *new_node, *check;
 unsigned int i;
-i = 0;
+i = 1;
 new_node = malloc(sizeof(dlistint_t));
 if(new_node == NULL)
 return NULL;
 new_node->n = n;
 check = *h;
-
-if(idx == 0 && check == NULL)
+if(idx == 0)
 {
+printf(" hello from start i=%d\n",i);
 new_node->prev = NULL;
 new_node->next = check;
+if (check != NULL)
+check->prev = new_node;
 *h = new_node;
-printf(" hello from start i=%d\n",i);
 return (new_node);
 }
-while(i < idx)
+if(check->next == NULL && idx == 1)
 {
-printf(" hello from while i=%d\n",i);
-if(check->next == NULL)
-{
-printf(" hello from while if check->next == NULL i=%d\n",i);
-break;
+printf("rejected due to null ->next  and request index 1\n");
+return NULL;
 }
+
+while(check->next != NULL)
+{
 check = check->next;
+if(check->prev == NULL)
+printf("opps it appears there is no prev and its int is %d",check->n);
+if(i == idx)
+break;
 i++;
+printf("while i=%d and idx=%d\n",i, idx);
+
 }
 if(i == idx)
 printf("i = idx\n");
 if(i != idx)
 printf("i != idx\n");
-if(check->next == NULL)
+
+if(i == idx && check->next != NULL)
 {
-printf(" hello from end i=%d\n",i);
-new_node->prev = check;
-new_node->next = NULL;
-check->next = new_node;
-return new_node;
-}
 printf(" hello from middle i=%d\n",i);
 new_node->next = check;
 new_node->prev = check->prev;
 check->prev->next = new_node;
 check->prev = new_node;
+return new_node;
+}
+
+if (idx > i)
+{
+printf("i != idx\n");
+return(NULL);
+}
+if(check->next == NULL)
+{
+printf(" hello from end i=%d\n",i);
+if(check->prev == NULL)
+printf(" no prev here in end check->prev");
+new_node->next = NULL;
+new_node->prev = check;
+check->next = new_node;
+return new_node;
+}
 return new_node;
 }
