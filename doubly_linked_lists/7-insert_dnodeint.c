@@ -40,7 +40,7 @@ check = check->next;
 i++;
 }
 
-if (check->next == NULL)
+if (check  == NULL)
 {
 new_node->next = NULL;
 new_node->prev = check;
@@ -53,3 +53,5 @@ check->prev = new_node;
 new_node->next = check;
 return (new_node);
 }
+
+n-n = n-h-n
