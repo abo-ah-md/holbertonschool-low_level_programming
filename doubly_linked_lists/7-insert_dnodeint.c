@@ -22,14 +22,8 @@ if (new_node == NULL)
 return (NULL);
 new_node->n = n;
 if (idx == 0)
-{
+return (add_dnodeint(h,n));
 
-new_node->prev = NULL;
-new_node->next = check;
-*h = new_node;
-if (check) check->prev = new_node;
-return (new_node);
-}
 while (check != NULL && i < idx)
 {
 check = check->next;
