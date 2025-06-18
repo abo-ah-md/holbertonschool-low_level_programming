@@ -40,9 +40,8 @@ check = check->next;
 i++;
 }
 
-if (check == NULL && i == idx) {
-
-printf("hello");  
+if (check->next == NULL)
+{
 new_node->next = NULL;
 new_node->prev = check;
 check->next = new_node;
