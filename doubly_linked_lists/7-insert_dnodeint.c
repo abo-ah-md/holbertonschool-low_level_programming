@@ -37,9 +37,6 @@ break;
 }
 check = check->next;
 i++;
-
-if(check == NULL)
-
 }
 
 if(check->next == NULL)
