@@ -25,19 +25,26 @@ if(idx == 0)
 new_node->prev = NULL;
 new_node->next = check;
 *h = new_node;
+return (new_node);
 }
 
-while(i != idx)
+while(idx != i)
+{
+if(check->next == NULL)
 {
 i++;
-check = check->next;
-printf("still going %d \n", check->n);
-if(check == NULL)
-printf("stopped and check n = %d \n", check->n);
+break;
 }
+check = check->next;
+i++;
 
 if(check == NULL)
+
+}
+
+if(check->next == NULL)
 {
+
 new_node->prev = check;
 new_node->next = NULL;
 check->next = new_node;
@@ -45,9 +52,10 @@ check = *h;
 return new_node;
 }
 
-new_node->prev = check;
-new_node->next = check->next;
-check->next = new_node;
+new_node->next = check;
+new_node->prev = check->prev;
+check->prev = new_node;
+new_node->prev->next = new_node;
 check = *h;
 return new_node;
 }
