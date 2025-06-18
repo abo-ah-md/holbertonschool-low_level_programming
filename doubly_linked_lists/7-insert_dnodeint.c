@@ -37,10 +37,7 @@ if (idx > i)
 return (NULL);
 if (i == idx && check->next == NULL)
 {
-new_node->next = NULL;
-new_node->prev = check;
-check->next = new_node;
-return (new_node);
+return (add_dnodeint_end(h,n));
 }
 new_node->prev = check->prev;
 check->prev->next = new_node;
