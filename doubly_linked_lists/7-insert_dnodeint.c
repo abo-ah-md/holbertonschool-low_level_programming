@@ -36,10 +36,7 @@ check = check->next;
 i++;
 }
 if(idx > i)
-{
-printf("(nil)");
 return(NULL);
-}
 if (i == idx && check == NULL)
 return (add_dnodeint_end(h,n));
 if (check->next == NULL)
