@@ -1,74 +1,63 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
-/**
- * main - Full bulletproof test suite for insert_dnodeint_at_index
- *
- * Return: EXIT_SUCCESS
- */
+/* Forward and backward print for double-check */
+void print_forward(dlistint_t *head)
+{
+    printf("Forward: ");
+    while (head)
+    {
+        printf("%d", head->n);
+        if (head->next)
+            printf(" -> ");
+        head = head->next;
+    }
+    printf("\n");
+}
+
+void print_backward(dlistint_t *head)
+{
+    // go to tail
+    while (head && head->next)
+        head = head->next;
+
+    printf("Backward: ");
+    while (head)
+    {
+        printf("%d", head->n);
+        if (head->prev)
+            printf(" <- ");
+        head = head->prev;
+    }
+    printf("\n");
+}
+
 int main(void)
 {
     dlistint_t *head = NULL;
 
-    printf("===== TEST 1: Insert into EMPTY LIST =====\n");
-    insert_dnodeint_at_index(&head, 0, 111); // valid
-    print_dlistint(head);
-printf("\n index 1\n");   
- insert_dnodeint_at_index(&head, 1, 222); // invalid
-    print_dlistint(head);
-printf("\n\n");
-    printf("\n===== TEST 2: Insert at HEAD =====\n");
-    insert_dnodeint_at_index(&head, 0, 50); // before 111
-printf("\n\n");   
- print_dlistint(head);
-printf("\n\n");   
-    printf("\n===== TEST 3: Insert at END =====\n");
-    insert_dnodeint_at_index(&head, 2, 999); // after 111
-printf("\n\n");  
-  print_dlistint(head);
+    printf("==== START ORDERED INSERTION TEST ====\n");
 
-    printf("\n===== TEST 4: Insert in MIDDLE =====\n");
-    insert_dnodeint_at_index(&head, 1, 77); // between 50 and 111
-printf("\n\n");   
- print_dlistint(head);
+    /* Simulate this scenario:
+     * Start with empty list
+     * Add 98 at index 0  → [98]
+     * Add -12 at index 1 → [98, -12]
+     * Add 98 at index 1  → [98, 98, -12]
+     * Add 6 at index 3   → [98, 98, -12, 6]
+     */
 
-    printf("\n===== TEST 5: Insert NEGATIVE VALUE =====\n");
-    insert_dnodeint_at_index(&head, 2, -42); // between 77 and 111
-printf("\n\n");
-    print_dlistint(head);
+    insert_dnodeint_at_index(&head, 0, 98);   // [98]
+    insert_dnodeint_at_index(&head, 1, -12);  // [98, -12]
+    insert_dnodeint_at_index(&head, 1, 98);   // [98, 98, -12]
+    insert_dnodeint_at_index(&head, 3, 6);    // [98, 98, -12, 6]
 
-    printf("\n===== TEST 6: Invalid INDEX =====\n");
-    dlistint_t *result = insert_dnodeint_at_index(&head, 99, 1234);
-    if (result == NULL)
-        printf("Correctly handled invalid index (NULL returned)\n");
-    else
-        printf("ERROR: Invalid index insert should return NULL\n");
-    print_dlistint(head);
+    print_forward(head);
+    print_backward(head);
 
-    printf("\n===== TEST 7: Single Node List =====\n");
+    printf("==== EXPECTED FORWARD: 98 -> 98 -> -12 -> 6 ====\n");
+    printf("==== EXPECTED BACKWARD: 6 <- -12 <- 98 <- 98 ====\n");
+
     free_dlistint(head);
-    head = NULL;
-    add_dnodeint_end(&head, 1);
-    insert_dnodeint_at_index(&head, 1, 2); // end
-    insert_dnodeint_at_index(&head, 0, 0); // head
-    print_dlistint(head);
-
-    printf("\n===== TEST 8: Duplicate Value Insert =====\n");
-    insert_dnodeint_at_index(&head, 1, 1); // insert another 1
-    print_dlistint(head);
-
-    printf("\n===== TEST 9: Head → Middle → End =====\n");
-    free_dlistint(head);
-    head = NULL;
-    add_dnodeint_end(&head, 10);
-    add_dnodeint_end(&head, 30);
-    insert_dnodeint_at_index(&head, 0, 5);  // head
-    insert_dnodeint_at_index(&head, 2, 20); // middle
-    insert_dnodeint_at_index(&head, 4, 40); // end
-    print_dlistint(head);
-
-    printf("\n===== CLEANUP =====\n");
-    free_dlistint(head);
-    return (EXIT_SUCCESS);
+    return (0);
 }

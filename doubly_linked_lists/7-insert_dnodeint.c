@@ -28,10 +28,12 @@ check->prev = new_node;
 *h = new_node;
 return (new_node);
 }
+/**
 if(check->next == NULL && idx == 1)
-{
 return NULL;
-}
+**/
+if(check == NULL)
+check= *h;
 while(check->next != NULL)
 {
 check = check->next;
