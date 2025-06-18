@@ -28,7 +28,7 @@ new_node->next = check;
 *h = new_node;
 return (new_node);
 }
-while (check->next != NULL && i < idx)
+while (check != NULL && i < idx)
 {
 check = check->next;
 i++;
