@@ -36,8 +36,9 @@ return (new_node);
 
 while (check->next != NULL && i < idx)
 {
-i++;
+
 check = check->next;
+i++;
 }
 
 if (check->next == NULL)
