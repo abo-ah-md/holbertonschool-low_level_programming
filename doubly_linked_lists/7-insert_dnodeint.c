@@ -30,7 +30,7 @@ if (idx == 0)
 {
 new_node->prev = NULL;
 new_node->next = check;
-check = new_node;
+*h = new_node;
 return (new_node);
 }
 
@@ -47,10 +47,9 @@ new_node->prev = check;
 check->next = new_node;
 return (new_node);
 }
-
+new_node->prev = check->prev;
 check->prev->next = new_node;
 check->prev = new_node;
 new_node->next = check;
-new_node->prev = check->prev;
 return (new_node);
 }
