@@ -23,9 +23,11 @@ return (NULL);
 new_node->n = n;
 if (idx == 0)
 {
+
 new_node->prev = NULL;
 new_node->next = check;
 *h = new_node;
+if (check) check->prev = new_node;
 return (new_node);
 }
 while (check != NULL && i < idx)
@@ -33,8 +35,8 @@ while (check != NULL && i < idx)
 check = check->next;
 i++;
 }
-if (check == NULL)
-return (NULL);
+if (i == idx && check == NULL)
+return (add_dnodeint_end(h,n));
 if (check->next == NULL)
 {
 return (add_dnodeint_end(h,n));
