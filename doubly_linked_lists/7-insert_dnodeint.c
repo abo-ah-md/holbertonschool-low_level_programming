@@ -14,7 +14,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 dlistint_t *new_node, *check;
 unsigned int i;
 
-if (check == NULL)
+if (*h == NULL)
 return (NULL);
 
 check = *h;
