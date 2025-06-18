@@ -21,7 +21,7 @@ new_node->n = n;
 check = *h;
 if(idx == 0)
 {
-printf(" hello from start i=%d\n",i);
+
 new_node->prev = NULL;
 new_node->next = check;
 if (check != NULL)
@@ -31,7 +31,7 @@ return (new_node);
 }
 if(check->next == NULL && idx == 1)
 {
-printf("rejected due to null ->next  and request index 1\n");
+
 return NULL;
 }
 
@@ -39,21 +39,15 @@ while(check->next != NULL)
 {
 check = check->next;
 if(check->prev == NULL)
-printf("opps it appears there is no prev and its int is %d",check->n);
+
 if(i == idx)
 break;
 i++;
-printf("while i=%d and idx=%d\n",i, idx);
+
 
 }
-if(i == idx)
-printf("i = idx\n");
-if(i != idx)
-printf("i != idx\n");
-
 if(i == idx && check->next != NULL)
 {
-printf(" hello from middle i=%d\n",i);
 new_node->next = check;
 new_node->prev = check->prev;
 check->prev->next = new_node;
@@ -63,14 +57,12 @@ return new_node;
 
 if (idx > i)
 {
-printf("i != idx\n");
 return(NULL);
 }
 if(check->next == NULL)
 {
-printf(" hello from end i=%d\n",i);
+
 if(check->prev == NULL)
-printf(" no prev here in end check->prev");
 new_node->next = NULL;
 new_node->prev = check;
 check->next = new_node;
