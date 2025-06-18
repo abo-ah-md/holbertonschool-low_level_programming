@@ -53,5 +53,3 @@ check->prev = new_node;
 new_node->next = check;
 return (new_node);
 }
-
-n-n = n-h-n
