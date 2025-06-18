@@ -33,9 +33,9 @@ while (check != NULL && i < idx)
 check = check->next;
 i++;
 }
-if (idx > i)
+if (check == NULL)
 return (NULL);
-if (i == idx && check->next == NULL)
+if (check->next == NULL)
 {
 return (add_dnodeint_end(h,n));
 }
