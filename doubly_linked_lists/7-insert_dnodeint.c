@@ -36,22 +36,21 @@ return (new_node);
 
 while (check->next != NULL && i < idx)
 {
-
 check = check->next;
 i++;
 }
 
-if (check == NULL && i == idx)
-{
+if (check == NULL && i == idx) {
+
+printf("hello");  
 new_node->next = NULL;
 new_node->prev = check;
 check->next = new_node;
 return (new_node);
 }
 new_node->prev = check->prev;
-new_node->next = check;
 check->prev->next = new_node;
 check->prev = new_node;
-
+new_node->next = check;
 return (new_node);
 }
