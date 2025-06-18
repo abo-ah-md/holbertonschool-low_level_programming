@@ -41,12 +41,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
         i++;
     }
 
-    if (i != idx)
-    {
-        free(new_node);
-        return (NULL); // Index out of range
-    }
-
+  
     if (check) // Insert before check
     {
         new_node->next = check;
