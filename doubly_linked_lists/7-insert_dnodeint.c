@@ -41,7 +41,7 @@ check = check->next;
 i++;
 }
 
-if (check->next == NULL)
+if (check == NULL && i == idx)
 {
 new_node->next = NULL;
 new_node->prev = check;
