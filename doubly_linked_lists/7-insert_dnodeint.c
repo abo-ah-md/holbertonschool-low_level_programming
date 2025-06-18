@@ -41,6 +41,7 @@ i++;
 }
 if(i == idx && check->next != NULL)
 {
+printf("jsd")
 new_node->next = check;
 new_node->prev = check->prev;
 check->prev->next = new_node;
