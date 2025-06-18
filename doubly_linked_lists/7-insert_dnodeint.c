@@ -36,7 +36,7 @@ if(check == NULL)
 printf("stopped and check n = %d \n", check->n);
 }
 
-if(check == NULL && idx == i)
+if(check == NULL)
 {
 new_node->prev = check;
 new_node->next = NULL;
