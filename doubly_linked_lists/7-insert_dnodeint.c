@@ -21,7 +21,6 @@ new_node->n = n;
 check = *h;
 if(idx == 0)
 {
-
 new_node->prev = NULL;
 new_node->next = check;
 if (check != NULL)
@@ -31,20 +30,14 @@ return (new_node);
 }
 if(check->next == NULL && idx == 1)
 {
-
 return NULL;
 }
-
 while(check->next != NULL)
 {
 check = check->next;
-if(check->prev == NULL)
-
 if(i == idx)
 break;
 i++;
-
-
 }
 if(i == idx && check->next != NULL)
 {
@@ -61,8 +54,6 @@ return(NULL);
 }
 if(check->next == NULL)
 {
-
-if(check->prev == NULL)
 new_node->next = NULL;
 new_node->prev = check;
 check->next = new_node;
