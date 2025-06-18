@@ -17,42 +17,44 @@ i = 0;
 new_node = malloc(sizeof(dlistint_t));
 if(new_node == NULL)
 return NULL;
-new_node->n= n;
+new_node->n = n;
 check = *h;
 
-if(idx == 0)
+if(idx == 0 && check == NULL)
 {
 new_node->prev = NULL;
 new_node->next = check;
 *h = new_node;
+printf(" hello from start i=%d\n",i);
 return (new_node);
 }
-
-while(idx != i)
+while(i < idx)
 {
+printf(" hello from while i=%d\n",i);
 if(check->next == NULL)
 {
-i++;
+printf(" hello from while if check->next == NULL i=%d\n",i);
 break;
 }
 check = check->next;
 i++;
 }
-
+if(i == idx)
+printf("i = idx\n");
+if(i != idx)
+printf("i != idx\n");
 if(check->next == NULL)
 {
-
+printf(" hello from end i=%d\n",i);
 new_node->prev = check;
 new_node->next = NULL;
 check->next = new_node;
-check = *h;
 return new_node;
 }
-
+printf(" hello from middle i=%d\n",i);
 new_node->next = check;
 new_node->prev = check->prev;
+check->prev->next = new_node;
 check->prev = new_node;
-new_node->prev->next = new_node;
-check = *h;
 return new_node;
 }
