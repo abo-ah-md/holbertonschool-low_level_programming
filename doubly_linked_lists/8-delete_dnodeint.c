@@ -20,7 +20,7 @@ return (-1);
 
 if (index == 0)
 {
-if(check->next != NULL)
+if (check->next != NULL)
 {
 check->next->prev = NULL;
 *head = check->next;
@@ -33,7 +33,7 @@ while (i < index && check != NULL)
 check = check->next;
 i++;
 }
-if(check == NULL && index > i)
+if (check == NULL && index > i)
 return (-1);
 
 if (check->next == NULL && index == i)
