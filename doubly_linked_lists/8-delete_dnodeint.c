@@ -27,15 +27,14 @@ if (*head == NULL)
 {
 return (-1);
 }
-while (i < index)
+while (i < index && check != NULL)
 {
-if(check->next != NULL)
 check = check->next;
 i++;
 }
-if(check == NULL && i != index)
+if(check == NULL && index > i)
 return (-1);
-if(check)
+
 if (check->next == NULL && index == i)
 {
 check->prev->next = NULL;
