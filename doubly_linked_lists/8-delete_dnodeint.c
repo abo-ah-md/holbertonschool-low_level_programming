@@ -17,10 +17,20 @@ if (check == NULL)
 return (-1);
 check = *head;
 
-if (index == 0)
+if (index == 0 && check->next != NULL)
 {
 check->next->prev = NULL;
+if(check->next->next != NULL)
+check->next->next = check->next->next;
+
+if(check->next->next == NULL)
+check->next->next = NULL;
 *head = check->next;
+free(check);
+return (1);
+}
+if(index == 0)
+{
 free(check);
 return (1);
 }
