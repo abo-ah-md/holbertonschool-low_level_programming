@@ -33,7 +33,7 @@ if(check->next != NULL)
 check = check->next;
 i++;
 }
-if(check == NULL && index != index)
+if(check == NULL && i != index)
 return (-1);
 if(check)
 if (check->next == NULL && index == i)
