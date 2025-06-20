@@ -13,6 +13,11 @@ unsigned int i;
 dlistint_t *check;
 i = 0;
 check = *head;
+if (!*head)
+{
+return (-1);
+}
+
 if (index == 0)
 {
 if(check->next != NULL)
@@ -22,10 +27,6 @@ check->next->prev = NULL;
 }
 free(check);
 return (1);
-}
-if (*head == NULL)
-{
-return (-1);
 }
 while (i < index && check != NULL)
 {
