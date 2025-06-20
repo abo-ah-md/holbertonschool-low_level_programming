@@ -10,8 +10,8 @@
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 unsigned int i;
-i = 0;
 dlistint_t *check;
+i = 0;
 check = malloc(sizeof(dlistint_t));
 if (check == NULL)
 return (-1);
