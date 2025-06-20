@@ -2,58 +2,49 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
-*print_str - prints string
-*@str: string
+*delete_dnodeint_at_index - remove a node from a linked list
+*@index: order number of node in the list
+*@head: a pointer to a  node pointer
+*Return: 1 on success and -1 on fail
 */
-void print_str(char *str)
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-int i = 0;
-while (str[i])
+unsigned int i;
+i = 0;
+dlistint_t *check;
+check = malloc(sizeof(dlistint_t));
+if (check == NULL)
+return (-1);
+check = *head;
+
+if (index == 0)
 {
-_putchar(str[i]);
+check->next->prev = NULL;
+*head = check->next;
+free(check);
+return (1);
+}
+while (i < index)
+{
+if (check == NULL)
+return (-1);
+
+check = check->next;
 i++;
-}
-}
-/**
-*print_num - prints numbers
-*@num: number
-*/
-void print_num(int num)
+if (check->next == NULL && index == i)
 {
-if (num < 0)
-{
-_putchar('-');
-num = -num;
+check->prev->next = NULL;
+free(check);
+return (1);
 }
-if (num / 10)
-print_num(num / 10);
-_putchar((num % 10) + '0');
-}
-/**
-*print_list - prints the elements of a nodes
-*@h: node struct
-*Return: number of pointers
-*/
-size_t print_list(const list_t *h)
+
+if (i == index)
 {
-int i = 0;
-while (h != NULL)
-{
-_putchar('[');
-print_num(h->len);
-_putchar(']');
-_putchar(' ');
-if (h->str == NULL)
-{
-print_str("(nil)\n");
+check->prev->next = check->next;
+check->next->prev = check->prev;
+free(check);
+return (1);
 }
-else
-{
-print_str(h->str);
-_putchar('\n');
 }
-i++;
-h = h->next;
-}
-return (i);
+return (-1);
 }
