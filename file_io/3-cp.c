@@ -30,10 +30,8 @@ exit(98);
 fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC,0664);
 if (fd2 == -1)
 {
-{
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 exit(99);
-}
 }
 while((file_read = read(fd1,buffer,1024)) > 0)
 {
@@ -46,6 +44,7 @@ dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 exit(98);
 }
 }
+
 if(file_read == -1)
 {
 close(fd1);
@@ -53,8 +52,18 @@ close(fd2);
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
-close(fd1);
-close(fd2);
+
+if (close(fd1) == -1)
+{
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
+exit(100);
+}
+if (close(fd2) == -1)
+{
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
+exit(100);
+}
+
 return (0);
 }
 
