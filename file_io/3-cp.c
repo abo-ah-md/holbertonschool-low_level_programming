@@ -5,10 +5,10 @@
 #include <string.h>
 #include "main.h"
 /**
- * main - check the code
- *
- * Return: Always 0.
- */
+* main - check the code
+*
+* Return: Always 0.
+*/
 int main(int argc, char *argv[])
 {
 int fd1, fd2;
@@ -41,7 +41,7 @@ if (file_write == -1)
 close(fd1);
 close(fd2);
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-exit(99);
+exit(98);
 }
 }
 
