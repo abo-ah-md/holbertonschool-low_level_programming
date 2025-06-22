@@ -24,7 +24,7 @@ exit(EXIT_FAILURE);
 j = 0;
 started = 0;
 if (n == 0)
-return (0);
+j[0] = 0;
 
 for (i = 63; i != (unsigned int)-1; i--)
 {
