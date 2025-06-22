@@ -31,7 +31,7 @@ fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC,0664);
 if (fd2 == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-exit(99);
+exit(98);
 }
 while((file_read = read(fd1,buffer,1024)) > 0)
 {
