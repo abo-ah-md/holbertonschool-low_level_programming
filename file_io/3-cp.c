@@ -32,7 +32,7 @@ if (fd2 == -1)
 {
 {
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
-exit(98);
+exit(99);
 }
 }
 while((file_read = read(fd1,buffer,1024)) > 0)
