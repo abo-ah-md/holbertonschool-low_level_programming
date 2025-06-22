@@ -18,20 +18,20 @@ char buffer[1024];
 file_read = 1;
 if(argc != 3)
 {
-fprintf(stderr, "usage: cp file_from file_to\n");
+dprintf(STDERR_FILENO, "usage: cp file_from file_to\n\n");
 exit(97);
 }
 fd1 = open(argv[1], O_RDONLY);
 if (fd1 == -1)
 {
-fprintf(stderr, "Error: Can't read from file NAME_OF_THE_FILE\n");
+dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
 fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC,0664);
 if (fd2 == -1)
 {
 {
-fprintf(stderr, "Error: Can't read from file NAME_OF_THE_FILE\n");
+dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
 exit(98);
 }
 }
@@ -42,7 +42,7 @@ if (file_write == -1)
 {
 close(fd1);
 close(fd2);
-fprintf(stderr, "Error: Can't write to NAME_OF_THE_FILE\n");
+dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 exit(99);
 }
 }
@@ -50,7 +50,7 @@ if(file_read == -1)
 {
 close(fd1);
 close(fd2);
-fprintf(stderr, "Error: Can't read from file NAME_OF_THE_FILE\n");
+dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
 close(fd1);
