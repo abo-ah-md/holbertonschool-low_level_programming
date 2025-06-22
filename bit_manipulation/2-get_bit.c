@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 /**
@@ -12,11 +13,19 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 unsigned int i;
+unsigned int j;
 unsigned long int mask;
 int started;
+int *num_arr;
+
+num_arr = malloc(sizeof(int) * 20);
+if (!num_arr)
+exit(EXIT_FAILURE);
+j = 0;
 started = 0;
 if (n == 0)
 return (0);
+
 for (i = 63; i != (unsigned int)-1; i--)
 {
 mask = 1UL << i;
@@ -26,15 +35,20 @@ if (started)
 {
 if ((n & mask))
 {
-if (i == index)
-return (1);
+num_arr[j] = 1;
+j++;
 }
 else
 {
-if (i == index)
-return (0);
+num_arr[j] = 0;
+j++;
 }
 }
 }
-return (0);
+if (index > j)
+return (-1);
+
+return (num_arr[index]);
+
+return (-1);
 }
