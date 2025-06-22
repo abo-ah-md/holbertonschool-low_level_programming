@@ -12,6 +12,8 @@ unsigned int i;
 unsigned long int mask;
 int started;
 started = 0;
+if (n == 0)
+putchar('0');
 for (i = 63; i != (unsigned int)-1; i--)
 {
 mask = 1UL << i;
