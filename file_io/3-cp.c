@@ -36,7 +36,7 @@ exit(99);
 while((file_read = read(fd1,buffer,1024)) > 0)
 {
 file_write = write(fd2,buffer, file_read);
-if (file_write == -1 || file_read != file_read)
+if (file_write == -1 || file_read != file_write)
 {
 close(fd1);
 close(fd2);
