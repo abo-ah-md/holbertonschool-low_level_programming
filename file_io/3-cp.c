@@ -36,12 +36,20 @@ exit(99);
 while((file_read = read(fd1,buffer,1024)) > 0)
 {
 file_write = write(fd2,buffer, file_read);
-if (file_write == -1)
+if (file_write == -1 || file_read != file_read)
 {
 close(fd1);
 close(fd2);
+if(file_write == -1)
+{
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-exit(2321);
+exit(99);
+}
+if(file_read == -1)
+{
+dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+exit(98);
+}
 }
 }
 
