@@ -3,8 +3,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <sys/stat.h>
-#define BUF_SIZE 1024
 /**
  * print_error_and_exit - Prints an error message and exits
  * @code: Exit status
@@ -20,14 +18,13 @@ void print_error_and_exit(int code, const char *message, const char *file)
  * main - Copy content of a file to another file
  * @argc: Number of arguments
  * @argv: Array of arguments
- *
  * Return: 0 on success, exits otherwise
  */
 int main(int argc, char *argv[])
 {
 	int fd_from, fd_to, close_from, close_to;
 	ssize_t read_bytes, written_bytes;
-	char buffer[BUF_SIZE];
+	char buffer[1024];
 
 	if (argc != 3)
 	{
