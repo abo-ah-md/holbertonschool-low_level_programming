@@ -41,11 +41,11 @@ if (file_write == -1)
 close(fd1);
 close(fd2);
 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-exit(99);
+exit(2321);
 }
 }
 
-if(file_read == -1)
+if (file_read == -1)
 {
 close(fd1);
 close(fd2);
