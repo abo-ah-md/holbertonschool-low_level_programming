@@ -1,4 +1,8 @@
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
 #include <stdio.h>
+#define BUFSIZE 1024
 /**
   * main - entry point
   * @ac: argument count
