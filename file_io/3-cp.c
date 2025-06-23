@@ -1,8 +1,8 @@
 #include "main.h"
 #include <fcntl.h>
-#include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 /**
  * print_error_and_exit - Prints an error message and exits
  * @code: Exit status
