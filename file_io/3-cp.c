@@ -1,15 +1,12 @@
 #include "main.h"
-#include <fcntl.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
+#include <stddef.h>
 /**
  * print_error_and_exit - Prints an error message and exits
  * @code: Exit status
  * @message: Error message format
  * @file: Related filename
  */
-void print_error_and_exit(int code, const char *message, const char *file)
+void print_error_and_exit(ssize_t code, const char *message, const char *file)
 {
 	dprintf(STDERR_FILENO, message, file);
 	exit(code);
@@ -40,7 +37,7 @@ int main(int argc, char *argv[])
 		close(fd_from);
 		print_error_and_exit(99, "Error: Can't write to %s\n", argv[2]);
 	}
-	while ((read_bytes = read(fd_from, buffer, BUF_SIZE)) > 0)
+	while ((read_bytes = read(fd_from, buffer, 1024)) > 0)
 	{
 		written_bytes = write(fd_to, buffer, read_bytes);
 		if (written_bytes == -1 || written_bytes != read_bytes)
@@ -58,9 +55,9 @@ int main(int argc, char *argv[])
 	}
 	close_from = close(fd_from);
 	if (close_from == -1)
-		print_error_and_exit(100, "Error: Can't close fd %d\n", fd_from);
+		print_error_and_exit(100, "Error: Can't close fd %s\n", argv[1]);
 	close_to = close(fd_to);
 	if (close_to == -1)
-		print_error_and_exit(100, "Error: Can't close fd %d\n", fd_to);
+		print_error_and_exit(100, "Error: Can't close fd %s\n", argv[2]);
 	return (0);
 }
