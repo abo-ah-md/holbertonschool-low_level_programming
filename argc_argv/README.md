@@ -1,8 +1,7 @@
   # 🧳 Command-Line Arguments in C — `argc` & `argv`
 
-<img src="https://img.icons8.com/external-flat-icons-inmotus-design/100/undefined/external-Terminal-programming-and-coding-flat-icons-inmotus-design.png" width="12%">
-<img src="https://i.imgur.com/ylmkS2o.png" width="18%">
-
+<img src ="https://img.icons8.com/?size=160&id=mfkStOwP4EC0&format=png" width="10%"></img>
+<img src ="https://i.imgur.com/ylmkS2o.png" width="20%"></img>
 ---
 
 ## 🧠 Overview
